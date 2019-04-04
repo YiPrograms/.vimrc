@@ -10,8 +10,8 @@ inoremap } <C-R>=ClosePair('}')<CR>
 inoremap " <C-R>=QuoteDelim('"')<CR>
 inoremap ' <C-R>=QuoteDelim("'")<CR>
 
-map <C-z> :w <CR><bar>:!echo "\n===Complie Started===" && g++ -std=c++11 -O2 -fsanitize=undefined -Wall -Wextra -Wshadow -o %<.o % && echo "===Compile Finished===\n" && echo "=====Run=====" && ./%<.o <CR>
-map <C-x> :!echo "\n=====Run=====" && ./%<.o <CR>
+map <C-z> :w <CR><bar>:!echo "\n===Complie Started===" && g++ -std=c++11 -O2 -fsanitize=undefined -Wall -Wextra -Wshadow -o ~/.Cpp.o/%<.o % && echo "===Compile Finished===\n" && echo "=====Run=====" && ~/.Cpp.o/%<.o <CR>
+map <C-x> :!echo "\n=====Run=====" && ~/.Cpp.o/%<.o <CR>
 
 function ClosePair(char)
     if getline('.')[col('.') - 1] == a:char
